@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8' />
+    <script src="./javaScriptEventes.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <button id="Post" onclick="addEvent()">Add event</button>
+    <button id="Put" onclick="updateEvent()">Update event</button>
+    <button id="Delete" onclick="deleteEvent()">Delete event</button>
+    <div id='calendar'></div>
+</body>
+<!-- <script>
+    document.getElementById("Post").addEventListener("click", function () {
+        console.log("enter to post")
+        chooseForPost();
+    });
+    function chooseForPost() {
+        console.log("enter to choose")
+        alert("lndggvf")
+        //var x = <input type="text" placeholder="Title" required />;
+        //var y = <input type="text" placeholder="Date" required />;
+        //alert(<input type="text" placeholder="Title" required />);
+    }
+</script> -->
+
+</html>
