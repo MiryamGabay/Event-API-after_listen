@@ -19,9 +19,10 @@ function getEvent() {
             events: res.data,
         });
         calendar.render();
+        alert(res.data);
     });
 }
-
+//"https://localhost:7259/api/Event"
 
 //POST
 function addEvent(){
@@ -47,6 +48,7 @@ function addEvent(){
 
 //PUT
 function updateEvent(){
+    getEvent();
     let id = prompt("enter id");
     let date = prompt("enter date");
     let title = prompt("enter title");
@@ -61,12 +63,13 @@ function updateEvent(){
       });
       calendar.render();
     });
-    getEvent()
+    getEvent();
 }
 
 
 //DELETE
 function deleteEvent(){
+    getEvent();
     let id = prompt("enter id");
     axios.delete(`https://eventsapi.onrender.com/api/Events/${id}`).then((res) => {
       var calendarEl = document.getElementById('calendar');
