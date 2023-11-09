@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //GET
 document.addEventListener("DOMContentLoaded", getEvent())
 function getEvent() {
-    axios.get("https://eventsapi.onrender.com/api/Events").then((res) => {
+    axios.get("https://localhost:7259/api/Event").then((res) => {
         var calendarEl = document.getElementById("calendar");
         var calendar = new FullCalendar.Calendar(calendarEl, {
             initialView: "dayGridMonth",
@@ -23,14 +23,15 @@ function getEvent() {
     });
 }
 //"https://localhost:7259/api/Event"
-
+//https://localhost:7259/api/Event
+//https://eventsapi.onrender.com/api/Events
 //POST
 function addEvent(){
     let date = prompt("enter date");
     let title = prompt("enter title");
     console.log(date)
     console.log(title)
-    axios.post("https://eventsapi.onrender.com/api/Events", {
+    axios.post("https://localhost:7259/api/Event", {
       "title": title,
       "start": date
     }).then((res) => {
@@ -52,7 +53,7 @@ function updateEvent(){
     let id = prompt("enter id");
     let date = prompt("enter date");
     let title = prompt("enter title");
-    axios.put(`https://eventsapi.onrender.com/api/Events/${id}`, {
+    axios.put(`https://localhost:7259/api/Event/${id}`, {
       "title": title,
       "start": date
     }).then((res) => {
@@ -71,7 +72,7 @@ function updateEvent(){
 function deleteEvent(){
     getEvent();
     let id = prompt("enter id");
-    axios.delete(`https://eventsapi.onrender.com/api/Events/${id}`).then((res) => {
+    axios.delete(`https://localhost:7259/api/Event/${id}`).then((res) => {
       var calendarEl = document.getElementById('calendar');
       var calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
